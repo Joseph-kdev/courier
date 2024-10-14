@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courier.KE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+      <!-- Main CSS File -->
+      <link href="{{ url_for('static', filename='assets/css/main.css')}}" rel="stylesheet" />
+    <style>
+        body, html {
+            height: 100%;
+            background-color: #000910;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card {
+            border-radius: 15px;
+            overflow: hidden;
+            width: 80vw;
+            max-width: 1000px;
+        }
+        .card-img-container {
+            height: 100%;
+            overflow: hidden;
+        }
+        .card-img {
+            object-fit: cover;
+            height: 600px;
+        }
+        .form-container {
+            padding: 3rem;
+        }
+        .btn-outline-secondary {
+            border-color: #ced4da;
+        }
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            padding: 0;
+            line-height: 40px;
+            text-align: center;
+        }
+        .login {
+            max-height: 600px;
+        }
+        .btn-primary {
+            background-color: #ff4a17;
+            color: #000910;
+            border: #ff4a17;
+        }
+        .btn-primary:hover {
+            background-color: #ff4917a1;;
+            color: white;
+            border: #000910;;
+        }
+        .btn-outline-primary {
+            background-color: #000910;
+            border: #000910;
+            color: white;
+        }
+        .btn-check:checked + .btn-outline-primary {
+            background-color: #ff4a17;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid d-flex align-items-center justify-content-center login">
+        <div class="card shadow">
+            <div class="row g-0">
+                <div class="col-lg-6 d-none d-lg-block">
+                    <div class="card-img-container">
+                        <img src="{{ url_for('static', filename='assets/img/login-truck.jpg') }}" alt="Bridge at night" class="card-img">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-container">
+                        <div class="btn-group w-100 mb-4" role="group">
+                            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                            <label class="btn btn-outline-primary w-50" for="btnradio1">LOGIN</label>
+                            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                            <label class="btn btn-outline-primary w-50" for="btnradio2">REGISTER</label>
+                        </div>
+
+                        <form id="loginForm" method="POST" action="{{ url_for('users.login')}}">
+                            <h5 class="text-center mb-4">Sign in with:</h5>
+                            <div class="d-flex justify-content-center mb-4">
+                                <a href="#" class="btn btn-outline-secondary social-btn mx-2"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="btn btn-outline-secondary social-btn mx-2"><i class="fab fa-google"></i></a>
+                                <a href="#" class="btn btn-outline-secondary social-btn mx-2"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="btn btn-outline-secondary social-btn mx-2"><i class="fab fa-github"></i></a>
+                            </div>
+
+                            <p class="text-center mb-4">or:</p>
+
+                            <div class="mb-4">
+                                <input type="text" name="email" class="form-control form-control-lg" placeholder="Email or username" required>
+                            </div>
+                            <div class="mb-4">
+                                <input type="password" name="password" class="form-control form-control-lg" placeholder="Password" required>
+                            </div>
+                            <div class="row mb-4">
+                                <div class="col-6">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="rememberMe">
+                                        <label class="form-check-label" for="rememberMe">Remember me</label>
+                                    </div>
+                                </div>
+                                <div class="col-6 text-end">
+                                    <a href="#" class="text-danger">Forgot password?</a>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg w-100">SIGN IN</button>
+                        </form>
+
+                        <form id="registerForm" style="display: none;" method="post" action="{{ url_for('users.register')}}">
+                            <h5 class="text-center mb-4">Sign up with:</h5>
+                            <div class="d-flex justify-content-center mb-4">
+                                <a href="#" class="btn btn-outline-secondary social-btn mx-2"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="btn btn-outline-secondary social-btn mx-2"><i class="fab fa-google"></i></a>
+                                <a href="#" class="btn btn-outline-secondary social-btn mx-2"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="btn btn-outline-secondary social-btn mx-2"><i class="fab fa-github"></i></a>
+                            </div>
+
+                            <p class="text-center mb-4">or:</p>
+
+                            <div class="mb-4">
+                                <input type="text" name="name" class="form-control form-control-lg" placeholder="Name" required>
+                            </div>
+                            <div class="mb-4">
+                                <input type="email" name="email" class="form-control form-control-lg" placeholder="Email" required>
+                            </div>
+                            <div class="mb-4">
+                                <input type="password" name="password" class="form-control form-control-lg" placeholder="Password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg w-100">REGISTER</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('btnradio1').addEventListener('change', function() {
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('registerForm').style.display = 'none';
+        });
+
+        document.getElementById('btnradio2').addEventListener('change', function() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('registerForm').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

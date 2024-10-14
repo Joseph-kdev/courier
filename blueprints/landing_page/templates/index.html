@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Courier.KE</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link
+      href="{{ url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css')}}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='assets/vendor/glightbox/css/glightbox.min.css')}}"
+      rel="stylesheet"
+    />
+    <link href="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.css')}}" rel="stylesheet" />
+
+    <!-- Main CSS File -->
+    <link href="{{ url_for('static', filename='assets/css/main.css')}}" rel="stylesheet" />
+  </head>
+
+  <body class="index-page">
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div
+        class="container-fluid container-xl position-relative d-flex align-items-center"
+      >
+        <a href="index.html" class="logo d-flex align-items-center me-auto">
+          <h1 class="sitename">Courier.KE</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="#hero" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+        <a class="cta-btn" href="{{ url_for('users.login') }}">Find a Job</a>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- Hero Section -->
+      <section id="hero" class="hero section dark-background"
+          style="background-image: url('static/assets/img/hero-bg.jpg');"
+          alt=""
+          class="aos-init aos-animate"
+        >
+
+        <div class="container d-flex flex-column align-items-center">
+          <h2 class="aos-init aos-animate">
+            find freelance truck services<br />
+          </h2>
+          <p class="aos-init aos-animate">
+            For reliable transportation of your goods or to find jobs for your
+            vehicles.
+          </p>
+          <div class="d-flex mt-4 aos-init aos-animate">
+            <a
+              href="{{ url_for('users.login') }}"
+              class="btn-get-started mx-4"
+              >Post a Job</a
+            >
+            <a href="#about" class="btn-o"><br /></a>
+          </div>
+        </div>
+      </section>
+      <!-- /Hero Section -->
+
+      <!-- About Section -->
+      <section id="about" class="py-5 light-background">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+              <h2 class="display-4">Why Work With Us?</h2>
+              <p class="lead text-muted mb-4">
+                We make it easier for freelance truck and lorry owners to source
+                jobs, manage their work, and build reliable relationships with clients.
+              </p>
+              <p class="lead">
+                Here’s why you should join Courier.KE:
+              </p>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-md-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title header p-4">
+                    <i class="bi bi-briefcase-fill"></i>
+                    Access to Jobs
+                  </h5>
+                  <p class="card-text">
+                    Gain direct access to numerous job opportunities without the
+                    need for middlemen. Bid on jobs that suit your availability
+                    and preferences.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title header p-4">
+                    <i class="bi bi-clock-history"></i> Flexibility & Control
+                  </h5>
+                  <p class="card-text">
+                    You have the freedom to choose jobs that fit your schedule,
+                    providing a better work-life balance while maximizing your
+                    earnings.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title header p-4">
+                    <i class="bi bi-shield-lock-fill"></i> Payment Transparency
+                  </h5>
+                  <p class="card-text">
+                    We offer secure payment systems to ensure you receive fair
+                    and timely compensation for the services you provide,
+                    reducing any payment disputes.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-md-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title header p-4">
+                    <i class="bi bi-bar-chart-line-fill"></i> Data Insights
+                  </h5>
+                  <p class="card-text">
+                    Track your performance, manage your earnings, and analyze
+                    job trends through an intuitive dashboard tailored for your
+                    business growth.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="col-md-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title header p-4">
+                    <i class="bi bi-people-fill"></i> Networking Opportunities
+                  </h5>
+                  <p class="card-text">
+                    Connect with other truck owners, build long-term client
+                    relationships, and collaborate on bigger projects to boost
+                    your income.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="col-md-4">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <h5 class="card-title header p-4">
+                    <i class="bi bi-file-earmark-fill"></i> Easy Documentation
+                  </h5>
+                  <p class="card-text">
+                    Digitally manage all your paperwork, including contracts and
+                    invoices, with minimal hassle through our streamlined
+                    platform.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- /About Section -->
+      <hr class="w-full">
+      <!-- Stats Section -->
+      <section id="stats" class="stats section light-background">
+        <div class="container aos-init aos-animate">
+          <div class="row gy-4">
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item d-flex align-items-center w-100 h-100">
+                <i class="bi bi-emoji-smile color-blue flex-shrink-0"></i>
+                <div>
+                  <span
+                    data-purecounter-start="0"
+                    data-purecounter-end="200"
+                    data-purecounter-duration="0"
+                    class="purecounter"
+                    >200</span
+                  >
+                  <p>Happy Clients</p>
+                </div>
+              </div>
+            </div>
+            <!-- End Stats Item -->
+
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item d-flex align-items-center w-100 h-100">
+                <i
+                  class="bi bi-journal-richtext color-orange flex-shrink-0"
+                ></i>
+                <div>
+                  <span
+                    data-purecounter-start="0"
+                    data-purecounter-end="521"
+                    data-purecounter-duration="0"
+                    class="purecounter"
+                    >521</span
+                  >
+                  <p>Jobs Posted</p>
+                </div>
+              </div>
+            </div>
+            <!-- End Stats Item -->
+
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item d-flex align-items-center w-100 h-100">
+                <i class="bi bi-coin color-green flex-shrink-0"></i>
+                <div>
+                  <span
+                    data-purecounter-start="0"
+                    data-purecounter-end="290"
+                    data-purecounter-duration="0"
+                    class="purecounter"
+                    >290</span
+                  >
+                  <p>Payments Completed</p>
+                </div>
+              </div>
+            </div>
+            <!-- End Stats Item -->
+
+            <div class="col-lg-3 col-md-6">
+              <div class="stats-item d-flex align-items-center w-100 h-100">
+                <i class="bi bi-people color-pink flex-shrink-0"></i>
+                <div>
+                  <span
+                    data-purecounter-start="0"
+                    data-purecounter-end="152"
+                    data-purecounter-duration="0"
+                    class="purecounter"
+                    >152</span
+                  >
+                  <p>Truck drivers</p>
+                </div>
+              </div>
+            </div>
+            <!-- End Stats Item -->
+          </div>
+        </div>
+      </section>
+      <!-- /Stats Section -->
+
+      <!-- Services Section -->
+      <section id="services" class="services section">
+        <!-- Section Title -->
+        <div class="container section-title aos-init aos-animate">
+          <h2>Services</h2>
+          <p>Featured Services<br /></p>
+        </div>
+        <!-- End Section Title -->
+
+        <div class="container">
+          <div class="row gy-5">
+            <div class="col-xl-4 col-md-6">
+              <div class="service-item">
+                <div class="img">
+                  <img
+                    src="{{ url_for('static', filename='assets/img/services-1.png')}}"
+                    class="img-fluid"
+                    alt=""
+                  />
+                </div>
+                <div class="details position-relative">
+                  <div class="icon">
+                    <i class="bi-truck"></i>
+                  </div>
+                  <a href="#" class="stretched-link">
+                    <h3>Easy Job Posting</h3>
+                  </a>
+                  <p>Post your transportation needs quickly and easily.</p>
+                </div>
+              </div>
+            </div>
+            <!-- End Service Item -->
+
+            <div class="col-xl-4 col-md-6 aos-init aos-animate">
+              <div class="service-item">
+                <div class="img">
+                  <img
+                    src="{{ url_for('static', filename='assets/img/services-2.png')}}"
+                    class="img-fluid"
+                    alt=""
+                  />
+                </div>
+                <div class="details position-relative">
+                  <div class="icon">
+                    <i class="bi bi-briefcase"></i>
+                  </div>
+                  <a href="#" class="stretched-link">
+                    <h3>Find Work</h3>
+                  </a>
+                  <p>Truck owners can find available jobs in their area.</p>
+                </div>
+              </div>
+            </div>
+            <!-- End Service Item -->
+
+            <div class="col-xl-4 col-md-6 aos-init aos-animate">
+              <div class="service-item">
+                <div class="img">
+                  <img
+                    src="{{ url_for('static', filename='assets/img/services-4.png')}}"
+                    class="img-fluid"
+                    alt=""
+                  />
+                </div>
+                <div class="details position-relative">
+                  <div class="icon">
+                    <i class="bi bi-star-fill"></i>
+                  </div>
+                  <a href="#" class="stretched-link">
+                    <h3>Ratings & Reviews</h3>
+                  </a>
+                  <p>Build trust with our rating and review system.</p>
+                </div>
+              </div>
+            </div>
+            <!-- End Service Item -->
+          </div>
+        </div>
+      </section>
+      <!-- /Services Section -->
+    </main>
+
+    <footer id="footer" class="footer dark-background">
+      <div class="container footer-top text-center">
+          <div class="footer-about">
+            <a href="index.html" class="logo d-flex justify-content-center">
+              <span class="sitename">Courier.KE</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p><strong>Email:</strong> <span>support@courier.ke</span></p>
+            </div>
+            <div class="social-links d-flex mt-4 justify-content-center">
+              <a href=""><i class="bi bi-twitter-x"></i></a>
+              <a href=""><i class="bi bi-facebook"></i></a>
+              <a href=""><i class="bi bi-instagram"></i></a>
+              <a href=""><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+      </div>
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>All Rights Reserved</span>
+        </p>
+        <div class="credits">
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="{{ url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/php-email-form/validate.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/purecounter/purecounter_vanilla.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/imagesloaded/imagesloaded.pkgd.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Main JS File -->
+    <script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+  </body>
+</html>
